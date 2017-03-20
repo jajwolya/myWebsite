@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='style.css'/>
+  </head>
+  <body>
+
+    <button type='button' onclick='changeText()'>Click</button>
+
+    <p id='demo'>
+      Text 1
+    </p>
+
+    <script>
+      var count = 0;
+      function changeText(){
+        if (count == 0){
+          document.getElementById("demo").innerHTML = 'Text 2';
+          count = 1;
+          console.log(count);
+        } else if (count == 1){
+          document.getElementById("demo").innerHTML = 'Text 1';
+          count = 0;
+          console.log(count);
+        }
+      }
+    </script>
+  </body>
+</html>
