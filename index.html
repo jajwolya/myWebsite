@@ -3,26 +3,31 @@
     <link rel='stylesheet' href='style.css'/>
   </head>
   <body>
-
-    <button type='button' onclick='changeText()'>Click</button>
-
-    <p id='demo'>
-      Text 1
-    </p>
-
+    <article class='article'>
+      <section class='left-section'>
+        <div class='menu'>
+          <div class='menu-item'>
+            portfolio
+          </div>
+          <div class='menu-item'>
+            about me
+          </div>
+          <div class='menu-item'>
+            contact
+          </div>          
+        </div>
+      </section>
+      <section class='right-section'>
+        <div class='image'>
+          <img src='http://bit.ly/2n62QpO'/>
+        </div>
+        <div class='image'>
+          <img src='http://bit.ly/2n036Ft'/>
+        </div>
+      </section>
+    </article>
     <script>
-      var count = 0;
-      function changeText(){
-        if (count == 0){
-          document.getElementById("demo").innerHTML = 'Text 2';
-          count = 1;
-          console.log(count);
-        } else if (count == 1){
-          document.getElementById("demo").innerHTML = 'Text 1';
-          count = 0;
-          console.log(count);
-        }
-      }
+
     </script>
   </body>
 </html>

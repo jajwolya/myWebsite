@@ -1,0 +1,48 @@
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+.article{
+  display: flex;
+  flex-direction: row;
+}
+
+.left-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 100vh;
+  flex-grow: 1;
+  position: relative;
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+}
+
+.menu-item{
+  padding: 45px;
+  font-family: 'Helvetica';
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.right-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.image{
+
+}
