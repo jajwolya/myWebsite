@@ -6,29 +6,37 @@
     <article class='article'>
       <section class='left-section'>
         <div class='menu'>
-          <div class='menu-item'>
+          <div class='menu-item' id='portfolio' onclick='changeColor(this)'>
+            jajwol
+          </div>
+          <div class='menu-item' id='aboutme' onclick='changeColor(this)'>
             portfolio
           </div>
-          <div class='menu-item'>
-            about me
-          </div>
-          <div class='menu-item'>
+          <div class='menu-item' id='contact' onclick='changeColor(this)'>
             contact
           </div>
         </div>
       </section>
       <section class='right-section'>
-        <div class='image-set'>
-          <div class='image-one'>
-          </div>
-          <div class='image-two'>
-          </div>
-          <div class='image-three'>
-          </div>
+        <div class='image-one'>
+          <img src="http://bit.ly/2mn2ix2"/>
+        </div>
+        <div class='image-two'>
+        </div>
+        <div class='image-three'>
         </div>
       </section>
     </article>
     <script>
+
+      function changeColor(div){
+        var className = div.getAttribute("class");
+        if(className=="menu-item"){
+          div.className="menu-item-active";
+        } else {
+          div.className="menu-item"
+        }
+      }
 
 
     </script>
