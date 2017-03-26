@@ -5,8 +5,6 @@ body{
 .article{
   display: flex;
   flex-direction: column;
-  width: auto;
-  height: auto;
 }
 
 .left-section{
@@ -20,121 +18,109 @@ body{
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .menu-item{
-  padding: 45px;
-  font-family: 'Helvetica';
+  padding: 30px;
+  font-family: 'DINPro';
   font-weight: bold;
-  font-size: 18px;
-  color: #3f3f3f;
+  font-size: 28px;
+  color: #474747;
 }
 
 .menu-item-active{
-  padding: 45px;
-  font-family: 'Helvetica';
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  font-family: 'DINPro';
   font-weight: bold;
-  font-size: 18px;
-  color: #d1bf68;
+  font-size: 28px;
+  color: #a5a5a5;
 }
 
 .right-section{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  width: 100vw;
 }
 
 .image-one, .image-two, .image-three{
-  display: flex;
-  justify-content: center;
   margin-top: auto;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .image-one{
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+}
+
+.title-name{
+  font-size: 250px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Exo';
+  color: #474747;
 }
 
 .image-two{
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ed6868;
+}
+
+.portfolio{
+  color: white;
+  font-weight: bold;
+  font-family: 'DINPro';
+  font-size: 75px;
+  padding: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .image-three{
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4286f4;
 }
 
 
+.contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
 
-/*@media (max-width: 400px){
+.contact-two{
+  color: white;
+  font-style: italic;
+  font-family: 'DINPro';
+  font-size: 60px;
+  padding: 0px;
+}
 
-  body{
-    padding: 0px;
-    margin: 0px;
-  }
+.contact-details-outlook{
+  color: white;
+  font-style: italic;
+  font-family: 'DINPro';
+  font-size: 60px;
+  padding: 0px;
+}
 
-  .article{
-    display: flex;
-    flex-direction: row;
-  }
-
-  .left-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height: 100vh;
-    flex-grow: 1;
-    position: relative;
-  }
-
-  .menu{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: fixed;
-  }
-
-  .menu-item{
-    padding: 45px;
-    font-family: 'Helvetica';
-    font-weight: bold;
-    font-size: 18px;
-  }
-
-  .right-section{
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    overflow: hidden;
-    flex-grow: 1;
-  }
-
-  .image-set{
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-  }
-
-  .image-one, .image-two, .image-three{
-    margin-top: auto;
-    justify-content: flex-end;
-    height: 100vh;
-  }
-
-  .image-one{
-    background-color: black;
-  }
-
-  .image-two{
-    background-color: red;
-  }
-
-  .image-three{
-    background-color: blue;
-  }
-}*/
+.contact-details-jajwolya{
+  color: white;
+  font-style: italic;
+  font-family: 'DINPro';
+  font-size: 80px;
+  padding: 0px;
+}

@@ -6,38 +6,129 @@
     <article class='article'>
       <section class='left-section'>
         <div class='menu'>
-          <div class='menu-item' id='portfolio' onclick='changeColor(this)'>
+          <div class='menu-item-active' id='jajwol' onclick='smoothScroll(jajwolPanel)'>
             jajwol
           </div>
-          <div class='menu-item' id='aboutme' onclick='changeColor(this)'>
+          <div class='menu-item' id='portfolio' onclick='smoothScroll(portfolioPanel)'>
             portfolio
           </div>
-          <div class='menu-item' id='contact' onclick='changeColor(this)'>
+          <div class='menu-item' id='contact' onclick='smoothScroll(contactPanel)'>
             contact
           </div>
         </div>
       </section>
       <section class='right-section'>
-        <div class='image-one'>
-          <img src="http://bit.ly/2mn2ix2"/>
+        <div class='image-one' id='jajwolPanel'>
+          <div class='title-name'>
+            jajwol
+          </div>
         </div>
-        <div class='image-two'>
+        <div class='image-two' id='portfolioPanel'>
+          <div class='portfolio'>
+            Graphic Designer
+          </div>
+          <div class='portfolio'>
+            Junior Web Developer
+          </div>
         </div>
-        <div class='image-three'>
+        <div class='image-three' id='contactPanel'>
+          <div class="contact">
+            <div class='contact-details-jajwolya'>
+              jajwolya@outlook.com
+            </div>
+            <div class='contact-details-outlook'>
+              0479 119 764
+            </div>
+          </div>
         </div>
       </section>
     </article>
     <script>
 
-      function changeColor(div){
-        var className = div.getAttribute("class");
-        if(className=="menu-item"){
-          div.className="menu-item-active";
-        } else {
-          div.className="menu-item"
-        }
-      }
 
+    function currentYPosition() {
+        // Firefox, Chrome, Opera, Safari
+        if (self.pageYOffset) return self.pageYOffset;
+        // Internet Explorer 6 - standards mode
+        if (document.documentElement && document.documentElement.scrollTop)
+            return document.documentElement.scrollTop;
+        // Internet Explorer 6, 7 and 8
+        if (document.body.scrollTop) return document.body.scrollTop;
+        return 0;
+    }
+
+    function elementYPosition(eID) {
+        var y = eID.offsetTop;
+        var node = eID;
+        while (node.offsetParent && node.offsetParent != document.body) {
+            node = node.offsetParent;
+            y += node.offsetTop;
+        } return y;
+    }
+
+    function smoothScroll(eID){
+      console.log('test');
+      var startY = currentYPosition();
+      var stopY = elementYPosition(eID);
+      console.log(startY);
+      console.log(stopY);
+      var distance = stopY > startY
+                        ? stopY - startY
+                        : startY - stopY;
+      console.log(distance);
+      if (distance < 100) {
+        scrollTo(0, stopY); return;
+      }
+      var speed = Math.round(distance/100);
+      if (speed >= 20) speed = 20;
+      var step = Math.round(distance / 25);
+      var leapY = stopY > startY
+                    ? startY + step
+                    : startY - step;
+      var timer = 0;
+      if (stopY > startY){
+        for (var i=startY; i<stopY; i+=step){
+            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+        } return;
+      }
+        for ( var i=startY; i>stopY; i-=step ) {
+          setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+          leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+
+        }
+    }
+
+
+
+
+
+    window.onscroll = function scrollActive(){
+
+      var panelOne = document.getElementById('jajwolPanel').getBoundingClientRect();
+      var panelTwo = document.getElementById('portfolioPanel').getBoundingClientRect();
+      var panelThree = document.getElementById('contactPanel').getBoundingClientRect();
+
+      var tabOne = document.getElementById('jajwol').getBoundingClientRect();
+      var tabTwo = document.getElementById('portfolio').getBoundingClientRect();
+      var tabThree = document.getElementById('contact').getBoundingClientRect();
+
+      // console.log(window.pageYOffset);
+
+      if (tabTwo.top > panelTwo.top && tabTwo.bottom < panelThree.top){
+        document.getElementById('jajwol').className='menu-item'
+        document.getElementById('portfolio').className='menu-item-active'
+        document.getElementById('contact').className='menu-item'
+      } else if (tabThree.top > panelThree.top && tabThree.bottom < panelThree.bottom){
+        document.getElementById('jajwol').className='menu-item'
+        document.getElementById('portfolio').className='menu-item'
+        document.getElementById('contact').className='menu-item-active'
+      } else if (tabOne.top > panelOne.top && tabOne.bottom < panelTwo.top){
+        document.getElementById('jajwol').className='menu-item-active'
+        document.getElementById('portfolio').className='menu-item'
+        document.getElementById('contact').className='menu-item'
+      }
+    }
 
     </script>
   </body>
