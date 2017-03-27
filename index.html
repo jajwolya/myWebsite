@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel='stylesheet' href='style.css'/>
+    <title>Jajwol</title>
   </head>
   <body>
     <article class='article'>
@@ -20,17 +21,23 @@
       <section class='right-section'>
         <div class='image-one' id='jajwolPanel'>
           <div class='title-name'>
-            jajwol
+            <h1>jajwol</h1>
           </div>
         </div>
         <div class='image-two' id='portfolioPanel'>
           <div class='portfolio'>
-            Graphic Designer
+            <div class='portfolio-container'>
+              Graphic Designer
+            </div>
           </div>
           <div class='portfolio'>
-            Junior Web Developer
+            <div class='portfolio-container'>
+              Junior Front End Developer
+            </div>
+
           </div>
         </div>
+
         <div class='image-three' id='contactPanel'>
           <div class="contact">
             <div class='contact-details-jajwolya'>
@@ -67,7 +74,6 @@
     }
 
     function smoothScroll(eID){
-      console.log('test');
       var startY = currentYPosition();
       var stopY = elementYPosition(eID);
       console.log(startY);
@@ -75,7 +81,6 @@
       var distance = stopY > startY
                         ? stopY - startY
                         : startY - stopY;
-      console.log(distance);
       if (distance < 100) {
         scrollTo(0, stopY); return;
       }
@@ -115,15 +120,15 @@
 
       // console.log(window.pageYOffset);
 
-      if (tabTwo.top > panelTwo.top && tabTwo.bottom < panelThree.top){
+      if (tabTwo.top > panelTwo.top && tabTwo.top < panelThree.top){
         document.getElementById('jajwol').className='menu-item'
         document.getElementById('portfolio').className='menu-item-active'
         document.getElementById('contact').className='menu-item'
-      } else if (tabThree.top > panelThree.top && tabThree.bottom < panelThree.bottom){
+      } else if (tabThree.top > panelThree.top && tabThree.top < panelThree.bottom){
         document.getElementById('jajwol').className='menu-item'
         document.getElementById('portfolio').className='menu-item'
         document.getElementById('contact').className='menu-item-active'
-      } else if (tabOne.top > panelOne.top && tabOne.bottom < panelTwo.top){
+      } else if (tabOne.top > panelOne.top && tabOne.top < panelTwo.top){
         document.getElementById('jajwol').className='menu-item-active'
         document.getElementById('portfolio').className='menu-item'
         document.getElementById('contact').className='menu-item'
