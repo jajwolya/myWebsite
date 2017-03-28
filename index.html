@@ -25,16 +25,50 @@
           </div>
         </div>
         <div class='image-two' id='portfolioPanel'>
-          <div class='portfolio'>
-            <div class='portfolio-container'>
-              Graphic Designer
+          <div class='portfolio-container-top slide-show' style='background-image: url(dotasoc_bg.jpg)' onclick='nextSlide(1)'>
+            <div class='portfolio-subtext'>
+              <div class='portfolio-text'>
+                DOTASOC
+              </div>
+              <div class='portfolio-text'>
+                University Society Brand Identity
+              </div>
+              <div class='portfolio-text'>
+                More info
+              </div>
+            </div>
+            <div class='image-container'>
+                <img src='dotasoc-01.svg' style='margin: auto;' width='70%' height='70%'/>
             </div>
           </div>
-          <div class='portfolio'>
-            <div class='portfolio-container'>
-              Junior Front End Developer
+          <div class='portfolio-container-top slide-show' style='background-color: red;' onclick='nextSlide(1)'>
+            <div class='portfolio-subtext'>
+              <div class='portfolio-text'>
+                YUKI
+              </div>
+              <div class='portfolio-text'>
+                Dessert Cafe Brand Identity
+              </div>
+              <div class='portfolio-text'>
+                More info
+              </div>
             </div>
-
+            <div class='image-container'>
+                <img src='dotasoc-01.svg' style='margin: auto;' width='70%' height='70%'/>
+            </div>
+          </div>
+          <div class='portfolio-container-bottom'>
+            <div class='portfolio-subtext'>
+              <div class='portfolio-text'>
+                TASKER
+              </div>
+              <div class='portfolio-text'>
+                iOS Application
+              </div>
+              <div class='portfolio-text'>
+                More info
+              </div>
+            </div>
           </div>
         </div>
 
@@ -51,6 +85,24 @@
       </section>
     </article>
     <script>
+
+    var slideIndex = 1;
+    showSlide(slideIndex);
+
+    function nextSlide(n){
+      showSlide(slideIndex += n);
+    }
+
+    function showSlide(n){
+      var i;
+      var slide = document.getElementsByClassName('slide-show');
+      if (n > slide.length) { slideIndex = 1 };
+      if (n < 1) { slideIndex = slide.length };
+      for (i = 0; i < slide.length; i++){
+        slide[i].style.display = 'none'
+      };
+      slide[slideIndex-1].style.display = 'block';
+    }
 
 
     function currentYPosition() {
@@ -103,10 +155,6 @@
 
         }
     }
-
-
-
-
 
     window.onscroll = function scrollActive(){
 
