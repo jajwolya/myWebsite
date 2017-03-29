@@ -75,7 +75,7 @@ body {
   background-color: white;
 }
 
-.portfolio-container-top, .portfolio-container-bottom {
+.portfolio-container-top, .portfolio-container-bot {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -88,7 +88,7 @@ body {
 
 .image-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100vw;
   height: 50vh;
@@ -107,7 +107,7 @@ body {
   box-sizing: border-box;
 }
 
-.portfolio-container-bottom{
+.portfolio-container-bot{
   background-color: black;
 }
 
@@ -147,19 +147,19 @@ body {
   padding: 0px;
 }
 
-.contact-details-outlook{
+.contact-details-number{
   color: #00350a;
   font-weight: bold;
-  font-family: 'DINPro';
-  font-size: 40px;
+  font-family: 'Lora';
+  font-size: 50px;
   padding: 0px;
 }
 
 .contact-details-jajwolya{
   color: #00350a;
   font-weight: bold;
-  font-family: 'DINPro';
-  font-size: 40px;
+  font-family: 'Lora';
+  font-size: 50px;
   padding: 0px;
 }
 

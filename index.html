@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class='image-two' id='portfolioPanel'>
-          <div class='portfolio-container-top slide-show-top' style='background-image: url(dotasoc_bg.jpg)' onclick='nextSlide(1)'>
+          <div class='portfolio-container-top slide-show-top' style='background-image: url(dotasoc_bg.jpg)'>
             <div class='portfolio-subtext'>
               <div class='portfolio-text'>
                 DOTASOC
@@ -33,15 +33,17 @@
               <div class='portfolio-text'>
                 University Society Brand Identity
               </div>
-              <div class='portfolio-text'>
-                More info
+              <div class='portfolio-text' style='decoration: none;'>
+                <a href='dotasoc.html'>More info</a>
               </div>
             </div>
             <div class='image-container'>
+                <img src='slideLeft.svg' width='10%' height='10%' onclick='nextSlideTop(-1)' style='margin='auto';'/>
                 <img src='dotasoc-01.svg' style='margin: auto;' width='70%' height='70%'/>
+                <img src='slideRight.svg' width='10%' height='10%' onclick='nextSlideTop(1)' style='margin='auto';'/>
             </div>
           </div>
-          <div class='portfolio-container-top slide-show-top' style='background-color: red;' onclick='nextSlide(1)'>
+          <div class='portfolio-container-top slide-show-top' style='background-color: pink;'>
             <div class='portfolio-subtext'>
               <div class='portfolio-text'>
                 YUKI
@@ -54,10 +56,28 @@
               </div>
             </div>
             <div class='image-container'>
-
+              <img src='slideLeft.svg' width='10%' height='10%' onclick='nextSlideTop(-1)' style='margin='auto';'/>
+              <img src='slideRight.svg' width='10%' height='10%' onclick='nextSlideTop(1)' style='margin='auto';'/>
             </div>
           </div>
-          <div class='portfolio-container-bottom slid-show-bottom'>
+          <div class='portfolio-container-top slide-show-top' style='background-color: green;'>
+            <div class='portfolio-subtext'>
+              <div class='portfolio-text'>
+                EXAMPLE
+              </div>
+              <div class='portfolio-text'>
+                Test
+              </div>
+              <div class='portfolio-text'>
+                More info
+              </div>
+            </div>
+            <div class='image-container'>
+              <img src='slideLeft.svg' width='10%' height='10%' onclick='nextSlideTop(-1)' style='margin='auto';'/>
+              <img src='slideRight.svg' width='10%' height='10%' onclick='nextSlideTop(1)' style='margin='auto';'/>
+            </div>
+          </div>
+          <div class='portfolio-container-bot slide-show-bot' style='background-color: red;'>
             <div class='portfolio-subtext'>
               <div class='portfolio-text'>
                 TASKER
@@ -69,6 +89,44 @@
                 More info
               </div>
             </div>
+            <div class='image-container'>
+              <img src='slideLeft.svg' width='10%' height='10%' onclick='nextSlideBot(-1)' style='margin='auto';'/>
+              <img src='slideRight.svg' width='10%' height='10%' onclick='nextSlideBot(1)' style='margin='auto';'/>
+            </div>
+          </div>
+          <div class='portfolio-container-bot slide-show-bot' style='background-color: pink;'>
+            <div class='portfolio-subtext'>
+              <div class='portfolio-text'>
+                YUKI
+              </div>
+              <div class='portfolio-text'>
+                Dessert Cafe Website
+              </div>
+              <div class='portfolio-text'>
+                More info
+              </div>
+            </div>
+            <div class='image-container'>
+              <img src='slideLeft.svg' width='10%' height='10%' onclick='nextSlideBot(-1)' style='margin='auto';'/>
+              <img src='slideRight.svg' width='10%' height='10%' onclick='nextSlideBot(1)' style='margin='auto';'/>
+            </div>
+          </div>
+          <div class='portfolio-container-bot slide-show-bot' style='background-color: black;'>
+            <div class='portfolio-subtext'>
+              <div class='portfolio-text'>
+                GAME
+              </div>
+              <div class='portfolio-text'>
+                iOS Game
+              </div>
+              <div class='portfolio-text'>
+                More info
+              </div>
+            </div>
+            <div class='image-container'>
+              <img src='slideLeft.svg' width='10%' height='10%' onclick='nextSlideBot(-1)' style='margin='auto';'/>
+              <img src='slideRight.svg' width='10%' height='10%' onclick='nextSlideBot(1)' style='margin='auto';'/>
+            </div>
           </div>
         </div>
 
@@ -77,7 +135,7 @@
             <div class='contact-details-jajwolya'>
               jajwolya@outlook.com
             </div>
-            <div class='contact-details-outlook'>
+            <div class='contact-details-number'>
               0479 119 764
             </div>
           </div>
@@ -86,22 +144,39 @@
     </article>
     <script>
 
-    var slideIndex = 1;
-    showSlide(slideIndex);
+    var slideIndexTop = 1;
+    var slideIndexBot = 1;
+    showSlideTop(slideIndexTop);
+    showSlideBot(slideIndexBot);
 
-    function nextSlide(n){
-      showSlide(slideIndex += n);
+    function nextSlideTop(n){
+      showSlideTop(slideIndexTop += n);
     }
 
-    function showSlide(n){
+    function nextSlideBot(n){
+      showSlideBot(slideIndexBot += n);
+    }
+
+    function showSlideTop(n){
       var i;
-      var slide = document.getElementsByClassName('slide-show');
-      if (n > slide.length) { slideIndex = 1 };
-      if (n < 1) { slideIndex = slide.length };
+      var slide = document.getElementsByClassName('slide-show-top');
+      if (n > slide.length) { slideIndexTop = 1 };
+      if (n < 1) { slideIndexTop = slide.length };
       for (i = 0; i < slide.length; i++){
         slide[i].style.display = 'none'
       };
-      slide[slideIndex-1].style.display = 'block';
+      slide[slideIndexTop-1].style.display = 'block';
+    }
+
+    function showSlideBot(n){
+      var i;
+      var slide = document.getElementsByClassName('slide-show-bot');
+      if (n > slide.length) { slideIndexBot = 1 };
+      if (n < 1) { slideIndexBot = slide.length };
+      for (i = 0; i < slide.length; i++){
+        slide[i].style.display = 'none'
+      };
+      slide[slideIndexBot-1].style.display = 'block';
     }
 
 
