@@ -8,7 +8,7 @@ body {
   flex-direction: column;
 }
 
-.left-section{
+.menu-section{
   display: flex;
   width: 100vw;
 }
@@ -40,7 +40,7 @@ body {
   color: #a5a5a5;
 }
 
-.right-section{
+.panel-section{
   width: 100vw;
 }
 

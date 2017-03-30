@@ -1,0 +1,77 @@
+body{
+  margin: 0;
+  background-color: black;
+}
+
+.article{
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-section{
+  display: flex;
+  width: 100vw;
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu-item{
+  padding: 30px;
+  font-family: 'DINPro';
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item-active{
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  font-family: 'DINPro';
+  font-weight: bold;
+  font-size: 28px;
+  color: #a5a5a5;
+}
+
+.panel-section{
+  width: 100vw;
+}
+
+.image-one, .image-two, .image-three{
+  margin-top: auto;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-one{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-name{
+  font-size: 250px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Exo';
+  color: white;
+}
+
+.poster{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 80vh;
+}
